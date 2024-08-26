@@ -7,19 +7,21 @@ android {
         minSdkVersion 21
         compileSdk 35
         targetSdk 35
-        versionCode 103
-        versionName "2.5.1"
+        versionCode 130
+        versionName "3.0.0"
     }
     namespace 'im.hoho.alipayInstallB'
     kotlin {
         jvmToolchain(21)
     }
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
-//    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 repositories {
@@ -29,5 +31,5 @@ repositories {
 
 dependencies {
     compileOnly 'de.robv.android.xposed:api:82'
-    implementation 'com.alibaba:fastjson:1.1.72.android'
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.52.android5'
 }
