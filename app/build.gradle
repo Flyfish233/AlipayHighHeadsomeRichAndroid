@@ -1,19 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-//    buildToolsVersion '27.0.3'
-
     defaultConfig {
         applicationId "im.hoho.alipayInstallB"
         minSdkVersion 21
-        targetSdkVersion 33
+        compileSdk 35
+        targetSdk 35
         versionCode 103
         versionName "2.5.1"
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     namespace 'im.hoho.alipayInstallB'
-    buildToolsVersion '34.0.0'
 //    buildTypes {
 //        release {
 //            minifyEnabled false
@@ -29,6 +25,5 @@ repositories {
 
 dependencies {
     compileOnly 'de.robv.android.xposed:api:82'
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.alibaba:fastjson:1.1.72.android'
 }
